@@ -17,6 +17,17 @@
         "options": ["Import", "Export"],
         "name": " "
       }
+    },
+    {
+      "name": "selected_year",
+      "value": 2013,
+      "bind": {
+        "input": "range",
+        "min": 2013,
+        "max": 2020,
+        "step": 1,
+        "name": "Select Year: "
+      }
     }
   ],
   "layer": [
@@ -29,12 +40,15 @@
               "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk9/main/data/imp_exp_gdp.csv"
             },
             "key": "Country Name",
-            "fields": ["Import", "Export", "GDP"]
+            "fields": ["Import", "Export", "GDP", "year"]
           }
         },
         {
           "calculate": "(datum[data_type] == null || datum[data_type] == 0) ? (data_type == 'Import' ? 'No Import Goods from ' : 'No Export Goods to ') + datum['properties.NAME'] : null",
           "as": "note"
+        },
+        {
+          "filter": "datum.year == selected_year"
         }
       ],
       "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
@@ -62,10 +76,10 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk9/main/data/imp_exp_gdp.csv"
+              "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk9/main/data/data_country_2013-2020.csv"
             },
             "key": "Country Name",
-            "fields": ["Import", "Export", "GDP"]
+            "fields": ["Import", "Export", "GDP", "year"]
           }
         },
         {
@@ -85,7 +99,7 @@
           "as": "Trade-to-GDP Category"
         },
         {
-          "filter": "datum['Selected Trade Value ($m)'] > 0"
+          "filter": "datum.year == selected_year"
         }
       ],
       "mark": {"type": "geoshape", "stroke": "black"},
