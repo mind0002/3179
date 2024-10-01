@@ -43,11 +43,6 @@
   "title": null,
   "width": "container",
   "height": "container",
-  "projection": {"type": "equalEarth"},
-  "data": {
-    "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/main/js/ne_110m_admin_0_countries.topojson",
-    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-  },
   "params": [
     {
       "name": "data_type",
@@ -60,7 +55,7 @@
     },
     {
       "name": "selected_year",
-      "value": 2020,
+      "value": 2019,
       "bind": {
         "input": "range",
         "min": 2013,
@@ -70,6 +65,13 @@
       }
     }
   ],
+  "projection": {"type": "equalEarth",
+                "rotate": [-120.7751, 10]},
+  "layer"
+  "data": {
+    "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/main/js/ne_110m_admin_0_countries.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
   "layer": [
     {
       "transform": [
@@ -121,9 +123,6 @@
           }
         },
         {
-          "filter": "datum.Year == selected_year"
-        },
-        {
           "calculate": "datum[data_type]",
           "as": "Selected Trade Value ($m)"
         },
@@ -136,7 +135,7 @@
           "as": "Trade-to-GDP Category"
         },
         {
-          "filter": "datum['Selected Trade Value ($m)'] > 0"
+          "filter": "datum.Year == selected_year"
         }
       ],
       "mark": {"type": "geoshape", "stroke": "black"},
@@ -179,6 +178,33 @@
         "text": {"value": "Australia"},
         "opacity": {"value": 1},
         "tooltip": {"value": "Australia"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk9/main/data/countryInfo.csv"
+            },
+            "key": "name",
+            "fields": ["latitude", "longitude"]
+          }
+        }
+      ],
+      "mark": {"type": "text"},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "properties.NAME", "type": "nominal"},
+        "opacity": {
+          "condition": {
+            "test": "datum['properties.NAME'] == 'Australia'",
+            "value": 1
+          },
+          "value": 0
+        }
       }
     }
   ]
