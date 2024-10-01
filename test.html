@@ -175,16 +175,10 @@
                 "range": ["#e5f5e0", "#a1d99b", "#41ab5d", "#238b45"]
               },
               "legend": {
-                "orient": "none", 
-                "direction": "vertical",
-                "title": "Trade-to-GDP Ratio",
+                "orient": "right",
+                "title": "Trade-to-GDP Category",
                 "titleFontSize": 12,
-                "labelFontSize": 12,
-                "titleLimit": 300,
-                "legendX": 830,
-                "legendY": 10,
-                "offset": 1,
-                "padding": 10
+                "labelFontSize": 12
               }
             },
             "tooltip": [
@@ -207,45 +201,35 @@
           }
         },
         {
-      "transform": [
-        {"filter": "datum.Country == 'Australia'"}
-      ],
-      "mark": {"type": "geoshape", "fill": "#FCD12A", "stroke": "black"},
-      "encoding": {
-        "longitude": {"value": 133.775136},
-        "latitude": {"value": -25.274398},
-        "text": {"value": "Australia"},
-        "opacity": {"value": 1},
-        "tooltip": {"value": "Australia"}
-      }
-    },
-    {
-      "transform": [
+          // Highlight Australia based on country name using the same geo field
+          "transform": [
+            {"filter": "datum.properties.NAME == 'Australia'"}
+          ],
+          "mark": {
+            "type": "geoshape",
+            "fill": "#FCD12A",
+            "stroke": "black"
+          }
+        },
         {
-          "lookup": "Country",
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/refs/heads/main/data/countryInfo.csv"
-            },
-            "key": "name",
-            "fields": ["latitude", "longitude"]
+          // Add annotation text for Australia using its geographic centroid
+          "data": {
+            "values": [{"country": "Australia", "longitude": 133.775136, "latitude": -25.274398}]
+          },
+          "mark": {
+            "type": "text",
+            "dx": -10,
+            "dy": -10,
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "color": "black"
+          },
+          "encoding": {
+            "longitude": {"field": "longitude"},
+            "latitude": {"field": "latitude"},
+            "text": {"field": "country"}
           }
         }
-      ],
-      "mark": {"type": "text"},
-      "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
-        "text": {"field": "Country", "type": "nominal"},
-        "opacity": {
-          "condition": {
-            "test": "datum['Country'] == 'Australia'",
-            "value": 1
-          },
-          "value": 0
-        }
-      }
-    }
       ],
       "config": {}
     };
