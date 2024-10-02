@@ -165,6 +165,56 @@
     },
     {
       "data": {
+        "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/main/data/country_data.csv"
+      },
+      "transform": [
+        {
+          "lookup": "Country",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/main/js/ne_110m_admin_0_countries.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_110m_admin_0_countries"
+              }
+            },
+            "key": "properties.NAME"
+          },
+          "as": "geo"
+        },
+        {
+          "calculate": "datum[data_type]",
+          "as": "Selected Trade Value ($m)"
+        },
+        {
+          "filter": "datum[data_type] == 0"
+        },
+        {
+          "calculate": "'There is no trades with ' + datum.Country",
+          "as": "note"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#ddd",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "tooltip": [
+          {
+            "field": "note",
+            "title" : ""
+          }
+        ]
+      }
+    },
+    {
+      "data": {
         "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/main/js/ne_110m_admin_0_countries.topojson",
         "format": {
           "type": "topojson",
