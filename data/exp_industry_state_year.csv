@@ -139,55 +139,6 @@ Manufacturing,TAS,2017,998
 Manufacturing,TAS,2018,1391
 Manufacturing,TAS,2019,1238
 Manufacturing,TAS,2020,1073
-Construction,NT,2014,15
-Construction,NT,2015,27
-Construction,NT,2016,11
-Construction,NT,2017,10
-Construction,NT,2018,7
-Construction,NT,2019,17
-Construction,NT,2020,50
-Construction,NSW,2014,142
-Construction,NSW,2015,112
-Construction,NSW,2016,106
-Construction,NSW,2017,114
-Construction,NSW,2018,117
-Construction,NSW,2019,151
-Construction,NSW,2020,135
-Construction,VIC,2014,83
-Construction,VIC,2015,78
-Construction,VIC,2016,65
-Construction,VIC,2017,63
-Construction,VIC,2018,90
-Construction,VIC,2019,120
-Construction,VIC,2020,94
-Construction,QLD,2014,150
-Construction,QLD,2015,159
-Construction,QLD,2016,131
-Construction,QLD,2017,98
-Construction,QLD,2018,111
-Construction,QLD,2019,105
-Construction,QLD,2020,121
-Construction,SA,2014,23
-Construction,SA,2015,14
-Construction,SA,2016,13
-Construction,SA,2017,27
-Construction,SA,2018,27
-Construction,SA,2019,40
-Construction,SA,2020,24
-Construction,WA,2014,118
-Construction,WA,2015,124
-Construction,WA,2016,110
-Construction,WA,2017,101
-Construction,WA,2018,128
-Construction,WA,2019,114
-Construction,WA,2020,146
-Construction,TAS,2014,2
-Construction,TAS,2015,1
-Construction,TAS,2016,2
-Construction,TAS,2017,2
-Construction,TAS,2018,2
-Construction,TAS,2019,1
-Construction,TAS,2020,1
 Wholesale trade,NT,2014,9
 Wholesale trade,NT,2015,4
 Wholesale trade,NT,2016,7
@@ -293,48 +244,48 @@ Retail trade,NT,2017,7
 Retail trade,NT,2018,5
 Retail trade,NT,2019,5
 Retail trade,NT,2020,4
-"Transport, postal and warehousing",NSW,2014,657
-"Transport, postal and warehousing",NSW,2015,690
-"Transport, postal and warehousing",NSW,2016,978
-"Transport, postal and warehousing",NSW,2017,2457
-"Transport, postal and warehousing",NSW,2018,1805
-"Transport, postal and warehousing",NSW,2019,1438
-"Transport, postal and warehousing",NSW,2020,1104
-"Transport, postal and warehousing",VIC,2014,645
-"Transport, postal and warehousing",VIC,2015,585
-"Transport, postal and warehousing",VIC,2016,782
-"Transport, postal and warehousing",VIC,2017,1024
-"Transport, postal and warehousing",VIC,2018,1180
-"Transport, postal and warehousing",VIC,2019,901
-"Transport, postal and warehousing",VIC,2020,865
-"Transport, postal and warehousing",QLD,2014,220
-"Transport, postal and warehousing",QLD,2015,268
-"Transport, postal and warehousing",QLD,2016,565
-"Transport, postal and warehousing",QLD,2017,343
-"Transport, postal and warehousing",QLD,2018,409
-"Transport, postal and warehousing",QLD,2019,398
-"Transport, postal and warehousing",QLD,2020,183
-"Transport, postal and warehousing",SA,2014,238
-"Transport, postal and warehousing",SA,2015,227
-"Transport, postal and warehousing",SA,2016,200
-"Transport, postal and warehousing",SA,2017,269
-"Transport, postal and warehousing",SA,2018,241
-"Transport, postal and warehousing",SA,2019,185
-"Transport, postal and warehousing",SA,2020,97
-"Transport, postal and warehousing",WA,2014,373
-"Transport, postal and warehousing",WA,2015,421
-"Transport, postal and warehousing",WA,2016,369
-"Transport, postal and warehousing",WA,2017,487
-"Transport, postal and warehousing",WA,2018,370
-"Transport, postal and warehousing",WA,2019,770
-"Transport, postal and warehousing",WA,2020,687
-"Transport, postal and warehousing",NT,2014,10
-"Transport, postal and warehousing",NT,2015,22
-"Transport, postal and warehousing",NT,2016,15
-"Transport, postal and warehousing",NT,2017,12
-"Transport, postal and warehousing",NT,2018,30
-"Transport, postal and warehousing",NT,2019,5
-"Transport, postal and warehousing",NT,2020,8
+Transport,NSW,2014,657
+Transport,NSW,2015,690
+Transport,NSW,2016,978
+Transport,NSW,2017,2457
+Transport,NSW,2018,1805
+Transport,NSW,2019,1438
+Transport,NSW,2020,1104
+Transport,VIC,2014,645
+Transport,VIC,2015,585
+Transport,VIC,2016,782
+Transport,VIC,2017,1024
+Transport,VIC,2018,1180
+Transport,VIC,2019,901
+Transport,VIC,2020,865
+Transport,QLD,2014,220
+Transport,QLD,2015,268
+Transport,QLD,2016,565
+Transport,QLD,2017,343
+Transport,QLD,2018,409
+Transport,QLD,2019,398
+Transport,QLD,2020,183
+Transport,SA,2014,238
+Transport,SA,2015,227
+Transport,SA,2016,200
+Transport,SA,2017,269
+Transport,SA,2018,241
+Transport,SA,2019,185
+Transport,SA,2020,97
+Transport,WA,2014,373
+Transport,WA,2015,421
+Transport,WA,2016,369
+Transport,WA,2017,487
+Transport,WA,2018,370
+Transport,WA,2019,770
+Transport,WA,2020,687
+Transport,NT,2014,10
+Transport,NT,2015,22
+Transport,NT,2016,15
+Transport,NT,2017,12
+Transport,NT,2018,30
+Transport,NT,2019,5
+Transport,NT,2020,8
 Other,NSW,2014,2018
 Other,NSW,2015,1606
 Other,NSW,2016,3030

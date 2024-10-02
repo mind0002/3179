@@ -1,58 +1,102 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-      "url": "data/exp_industry_year.csv"
+      "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/refs/heads/main/data/exp_industry_state_year.csv"
     },
-    "width": "container",
-    "transform": [
+    "hconcat": [
       {
-        "calculate": "datum.temp_max - datum.temp_min",
-        "as": "temp_range"
-      }
-    ],
-    "mark": {
-      "type": "line",
-      "interpolate": "monotone"
-    },
-    "encoding": {
-      "x": {
-        "field": "date",
-        "timeUnit": "month",
-        "title":null
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "Year", 
+            "type": "temporal",
+            "title": "Year"
+          },
+          "y": {
+            "aggregate": "sum",
+            "field": "Value($m)", 
+            "type": "quantitative",
+            "title": "Value of Export Goods Value ($m)"
+          },
+          "color": {
+            "condition": {
+              "selection": "selectedLine",
+              "field": "Industry",
+              "type": "nominal"
+            },
+            "value": "grey"
+          },
+          "opacity": {
+            "condition": {
+              "selection": "selectedLine",
+              "value": 1
+            },
+            "value": 0.2
+          }
+        },
+        "selection": {
+          "selectedLine": {
+            "type": "point",
+            "on": "click",
+            "fields": ["Industry"],
+            "clear": "dblclick"
+          }
+        }
       },
-      "y": {
-        "field": "temp_range",
-        "aggregate": "mean",
-        "title": "Mean of Temperature"
-      },
-      "color": {
-        "timeUnit": "year",
-        "type": "nominal",
-        "field": "date",
-        "title": "Year",
-        "legend":{"orient": "none", "legendX":10, "legendY":5}
-      }
-    },
-    "config": {
-        "view": {
-          "stroke": null
-        },
-        "axis": {
-          "labelFont": "Afacad Flux",
-          "titleFont": "Afacad Flux"
-        },
-        "legend": {
-          "labelFont": "Afacad Flux",
-          "titleFont": "Afacad Flux"
-        },
-        "header": {
-          "labelFont": "Afacad Flux",
-          "titleFont": "Afacad Flux"
-        },
-        "title": {
-          "font": "Afacad Flux",
-          "fontSize": 18,
-          "fontWeight": 600
+      {
+        "mark": "bar",
+        "transform": [
+          {"filter": {"selection": "selectedLine"}},
+          {"filter": "datum.Year == selectedYear"}
+        ],
+        "encoding": {
+          "x": {
+            "field": "State",
+            "type": "nominal",
+            "title": "State"
+          },
+          "y": {
+            "aggregate": "sum",
+            "field": "Value($m)",
+            "type": "quantitative",
+            "title": "Export Value ($m)"
+          },
+          "color": {"field": "State", "type": "nominal"}
         }
       }
+    ],
+    "params": [
+      {
+        "name": "selectedYear",
+        "value": 2013, 
+        "bind": {
+          "input": "select",
+          "options": [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
+          "name": "Select Year: "
+        }
+      }
+    ],
+    "config": {
+      "view": {
+        "stroke": null
+      },
+      "axis": {
+        "labelFont": "Afacad Flux",
+        "titleFont": "Afacad Flux"
+      },
+      "legend": {
+        "labelFont": "Afacad Flux",
+        "titleFont": "Afacad Flux"
+      },
+      "header": {
+        "labelFont": "Afacad Flux",
+        "titleFont": "Afacad Flux"
+      },
+      "title": {
+        "font": "Afacad Flux",
+        "fontSize": 18,
+        "fontWeight": 600
+      }
+    }
   }
+  
