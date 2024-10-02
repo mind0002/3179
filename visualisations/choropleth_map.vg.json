@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Australia's Global Trade Partners: Trade-to-GDP Ratio Across Countries (2013-2020)",
-  "width": "container",
-  "height": "container",
+  "width": 850, 
+  "height": 350, 
   "params": [
     {
       "name": "data_type",
@@ -140,6 +140,7 @@
           "legend": {
             "orient": "right",
             "title": "Trade-to-GDP Ratio",
+            "offset": -30,
             "titleFontSize": 16,
             "labelFontSize": 16
           }
