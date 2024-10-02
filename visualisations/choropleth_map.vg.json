@@ -32,6 +32,32 @@
   "layer": [
     {
       "data": {
+        "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/main/js/ne_110m_admin_0_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "'There is no trades with ' + datum.properties.NAME",
+          "as": "note"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#ddd",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "tooltip": {
+          "field": "note"
+        }
+      }
+    },
+    {
+      "data": {
         "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/main/js/oceans.topojson",
         "format": {
           "type": "topojson",
