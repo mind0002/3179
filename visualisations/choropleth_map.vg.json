@@ -164,8 +164,8 @@
           "filter": "datum[data_type] == 0"
         },
         {
-          "calculate": "'There is no trades with ' + datum.Country",
-          "as": "note"
+          "calculate": "(datum[data_type] == null || datum[data_type] == 0) ? (data_type == 'Import' ? 'No Import Goods from ' : 'No Export Goods to ') + datum['Country'] : null",
+          "as": "Note"
         }
       ],
       "mark": {
@@ -181,8 +181,12 @@
         },
         "tooltip": [
           {
-            "field": "note",
-            "title" : ""
+            "field": "Country",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "Note"
           }
         ]
       }
