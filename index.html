@@ -23,7 +23,14 @@
         <div class="pure-g">
             <div class="pure-u-1-1">
                 <h1>Australia's Global Trade: Imports and Exports by Country</h1>
-                <p>This data has been collected from annual, state-wide, <i>Attitudes to School</i> surveys, which measure students' experiences at school. These are the responses to the question <i>"I have been bullied recently at school"</i> from students in years 7 to 9, separated by Local Government Area (LGA).</p>
+                <div class="desc-head">
+                <p>Presenting data from the <b>Australian Bureau Force(ABF)</b>  and the <b> Australian Bureau of Statistics (ABS)</b>  
+                 , this interactive platform offers a dynamic view of Australia’s global trade landscape. 
+                 Dive deep into Australia’s import and export activities, segmented by country, industry, and state, and 
+                 discover how economic interactions with regions across the world have evolved over time. 
+                 Explore now to gain insightful perspectives on the industries and countries driving Australia's trade growth!
+                </p>
+                </div>
             </div>
         </div>
         <!-- end pure grid group -->
@@ -31,17 +38,32 @@
         <!-- Choropleth map -->
         <div class="pure-g">
             <div class="pure-u-1-1">
-                <div id="map" class="map-container"></div>
+                <div class="map-container">
+                <div id="map"></div>
+                <p>Bullying statistics across Victoria vary greatly, with some correlation to location. In most regions,
+                    neighbouring LGAs have similar bullying rates and Metropolitan Melbourne has lower rates than in Regional
+                    Victoria.
+                    However, in 2016, the LGA with the highest reported rate (30.5%), Northern Grampians near the western border,
+                    is directly adjacent to the LGA with the lowest rate (Southern Grampians, 4.3%). </p>
+            </div>
             </div>
         </div>
         <!-- end pure grid group -->
+
+        <!-- Caption/small text -->
+        <!-- <div class="pure-g">
+            <div class="pure-u-1-1">
+           
+            </div>
+        </div> -->
+      <!-- end pure grid group -->
 
         <!-- Line chart map -->
         <div class="pure-g">
             <div class="pure-u-1-1">
                 <div class="vis-container">
                     <!-- Vega-Lite chart will be embedded here -->
-                    <div id="line"></div>
+                    <div id="line" class="vis-item"></div>
                     <div id="dropdown">
                       <label for="yearSelect">Select Year: </label>
                       <select id="yearSelect">
