@@ -85,7 +85,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/main/data/country_data.csv"
+        "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/refs/heads/main/data/country_data.csv"
       },
       "transform": [
         {
@@ -165,7 +165,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/main/data/country_data.csv"
+        "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/refs/heads/main/data/country_data.csv"
       },
       "transform": [
         {

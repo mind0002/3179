@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "data/exp_industry_year.csv"
+    },
+    "width": "container",
+    "transform": [
+      {
+        "calculate": "datum.temp_max - datum.temp_min",
+        "as": "temp_range"
+      }
+    ],
+    "mark": {
+      "type": "line",
+      "interpolate": "monotone"
+    },
+    "encoding": {
+      "x": {
+        "field": "date",
+        "timeUnit": "month",
+        "title":null
+      },
+      "y": {
+        "field": "temp_range",
+        "aggregate": "mean",
+        "title": "Mean of Temperature"
+      },
+      "color": {
+        "timeUnit": "year",
+        "type": "nominal",
+        "field": "date",
+        "title": "Year",
+        "legend":{"orient": "none", "legendX":10, "legendY":5}
+      }
+    },
+    "config": {
+        "view": {
+          "stroke": null
+        },
+        "axis": {
+          "labelFont": "Afacad Flux",
+          "titleFont": "Afacad Flux"
+        },
+        "legend": {
+          "labelFont": "Afacad Flux",
+          "titleFont": "Afacad Flux"
+        },
+        "header": {
+          "labelFont": "Afacad Flux",
+          "titleFont": "Afacad Flux"
+        },
+        "title": {
+          "font": "Afacad Flux",
+          "fontSize": 18,
+          "fontWeight": 600
+        }
+      }
+  }
