@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Australia's Global Trade Partners: Trade-to-GDP Ratio Across Countries (2013-2020)",
-  "width": 800, 
+  "title": "Australia's Global Trade Partners: Trade-to-GDP Ratio Across Countries in 2020",
+  "width": 870, 
   "height": 380, 
   "params": [
     {
@@ -11,17 +11,6 @@
         "input": "select",
         "options": ["Import", "Export"],
         "name": "Trade Type: "
-      }
-    },
-    {
-      "name": "selected_year",
-      "value": 2020,
-      "bind": {
-        "input": "range",
-        "min": 2013,
-        "max": 2020,
-        "step": 1,
-        "name": "Year: "
       }
     }
   ],
@@ -115,7 +104,7 @@
           "as": "Trade-to-GDP Category"
         },
         {
-          "filter": "datum.Year == selected_year && datum.Country != 'Australia'"
+          "filter": "datum.Year == 2020 && datum.Country != 'Australia'"
         }
       ],
       "mark": {
@@ -185,7 +174,7 @@
           "as": "Selected Trade Value ($m)"
         },
         {
-          "filter": "datum.Year == selected_year && datum[data_type] == 0"
+          "filter": "datum.Year == 2020 && datum.Country != 'Australia' && datum[data_type] == 0"
         },
         {
           "calculate": "(datum[data_type] == null || datum[data_type] == 0) ? (data_type == 'Import' ? 'No Import Goods from ' : 'No Export Goods to ') + datum['Country'] : null",
