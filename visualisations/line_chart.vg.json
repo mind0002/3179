@@ -54,7 +54,7 @@
           "field": "Industry",
           "legend": {
             "orient": "right",
-            "title": "Trade-to-GDP Ratio",
+            "title": "Industry",
             "offset": 10,
             "titleFontSize": 16,
             "labelFontSize": 16

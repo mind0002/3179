@@ -281,7 +281,9 @@
     },
     "axis": {
       "labelFont": "Afacad Flux",
-      "titleFont": "Afacad Flux"
+      "titleFont": "Afacad Flux",
+      "titleFontSize": 14,
+      "labelFontSize": 14
     },
     "legend": {
       "labelFont": "Afacad Flux",
@@ -293,7 +295,7 @@
     },
     "title": {
       "font": "Afacad Flux",
-      "fontSize": 20,
+      "fontSize": 18,
       "fontWeight": 600
     }
   }
