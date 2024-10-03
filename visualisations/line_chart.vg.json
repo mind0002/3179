@@ -4,72 +4,24 @@
     "text": "Australia's Export Trends by Industry and State (2014-2020)",
     "anchor": "middle"
   },
-  "width": 800,
-  "height": "container",
+  "width": 700, 
+  "height": 350,
   "params": [
     {
       "name": "selectedYear",
-      "value": 2020
+      "value": 2020,
+      "bind": {
+        "input": "range",
+        "min": 2014,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+      }
     }
   ],
   "data": {
     "url": "https://raw.githubusercontent.com/mind0002/FIT3179-HomeworkWk10/refs/heads/main/data/exp_industry_state_year.csv"
   },
-  "hconcat": [
-    {
-      "mark": {
-        "type": "line",
-        "point": true,
-        "tooltip": true
-      },
-      "params": [{
-          "name": "highlight",
-          "select": {"type": "point", "fields": ["Industry"]},
-          "bind": "legend"
-      }],
-      "transform": [
-        {
-          "calculate":"year(datum.Year)",
-          "as": "data_year"
-        }
-      ],
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "temporal",
-          "title": "Year"
-        },
-        "y": {
-          "aggregate": "sum",
-          "field": "Value($m)",
-          "type": "quantitative",
-          "title": "Value of Export Goods Value ($m)"
-        },
-        "color": {
-          "field": "Industry",
-          "type": "nominal",
-          "legend": {
-            "title": "Industry",
-            "orient": "right",
-            "labelFont": "Afacad Flux",
-            "titleFont": "Afacad Flux"
-          }
-        },
-        "opacity": {
-          "condition": {
-            "param": "highlight",
-            "value": 1
-          },
-          "value": 0.5
-        },
-        "tooltip": [
-          {"field": "Industry", "type": "nominal", "title": "Industry"},
-          {"field": "data_year", "type": "quantitative", "title": "Year"},
-          {"aggregate": "sum", "field": "Value($m)", "type": "quantitative", "title": "Export Value ($m)"}
-        ]
-      }
-    },
-    {
       "mark": {
         "type": "bar",
         "tooltip": true
@@ -99,16 +51,22 @@
           "title": "Export Value ($m)"
         },
         "color": {
-          "value": "#41ab5d"
+          "field": "Industry",
+          "legend": {
+            "orient": "right",
+            "title": "Trade-to-GDP Ratio",
+            "offset": 10,
+            "titleFontSize": 16,
+            "labelFontSize": 16
+          }
         },
         "tooltip": [
           {"field": "data_year", "type": "nominal", "title": "Year"},
           {"field": "State", "type": "nominal", "title": "State"},
+          {"field": "Industry", "type": "nominal", "title": "Industry"},
           {"aggregate": "sum", "field": "Value($m)", "type": "quantitative", "title": "Export Value ($m)"}
         ]
-      }
-    }
-  ], "spacing": 75,
+      },
   "config": {
     "view": {
       "stroke": null
