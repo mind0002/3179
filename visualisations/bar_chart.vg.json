@@ -64,7 +64,7 @@
           {"field": "data_year", "type": "nominal", "title": "Year"},
           {"field": "State", "type": "nominal", "title": "State"},
           {"field": "Industry", "type": "nominal", "title": "Industry"},
-          {"aggregate": "sum", "field": "Value($m)", "type": "quantitative", "title": "Export Value ($m)"}
+          {"aggregate": "sum", "field": "Value($m)", "type": "quantitative", "title": "Export Value ($m)", "format": ","}
         ]
       },
   "config": {
