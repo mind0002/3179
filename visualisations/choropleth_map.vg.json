@@ -227,7 +227,8 @@
         "values": [{"country": "Australia", "longitude": 138.775136, "latitude": -28.274398},
                    {"country": "China", "longitude": 104.195397, "latitude": 29.86166},
                    {"country": "USA", "longitude": -95.712891, "latitude": 35.09024},
-                   {"country": "Brazil", "longitude": -49.92528, "latitude": -10.235004}]
+                   {"country": "Brazil", "longitude": -49.92528, "latitude": -10.235004},
+                   {"country": "Russia", "longitude": 105.318756, "latitude": 53.52401}]
       },
       "mark": {
         "type": "text",
