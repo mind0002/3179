@@ -95,9 +95,6 @@
           "as": "Selected Trade Value ($m)"
         },
         {
-          "filter": "datum[data_type] > 0"
-        },
-        {
           "calculate": "(datum.GDP != null && datum.GDP != 0) ? datum[data_type] / datum.GDP : 0",
           "as": "Normalized Trade Value (%)"
         },
@@ -204,33 +201,6 @@
             "field": "Note"
           }
         ]
-      }
-    },
-    {
-      "transform": [
-        {
-          "lookup": "Country",
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/countryInfo.csv"
-            },
-            "key": "name",
-            "fields": ["latitude", "longitude"]
-          }
-        }
-      ],
-      "mark": {"type": "text"},
-      "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
-        "text": {"field": "Country", "type": "nominal"},
-        "opacity": {
-          "condition": {
-            "test": "datum['Country'] == 'China' || datum['Country'] == 'Brazil' || datum['Country'] == 'Australia' || datum['Country'] == 'Malaysia' ||  datum['Country'] == 'Yemen' ||  datum['Country'] == 'United States of America'",
-            "value": 1
-          },
-          "value": 0
-        }
       }
     },
     {
